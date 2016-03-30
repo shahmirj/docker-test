@@ -17,8 +17,26 @@ $ docker run -p 80:5000 --name docker-test shahmirj/docker-test
 ```
 
 ## Push the image to the Docker HUB
-If all is OK you can commit it to the docker hub
+If all is OK you can commit it to the docker hub, and share with others
 
 ```
 $ docker push shahmirj/docker-test
 ```
+
+---
+
+## Taking it further with `docker-compose`
+Most development app's are build using some sort of database and the best way to start
+multiple packages is to use
+[`docker-compose`](https://docs.docker.com/compose/gettingstarted/). Let's say in
+our example our webapp uses a redis cache, instead of installing this locally to
+our app we can use `docker-compose` to bring up two apps, as seen inside the
+docker-compose.yml file.
+
+To bring the APP up just use
+
+```
+$ docker-compose up -d
+```
+
+To shut it down you can use `stop` or `rm` to remove all the apps.
