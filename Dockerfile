@@ -3,11 +3,11 @@ FROM ubuntu
 RUN sudo apt-get update && apt-get upgrade -y
 RUN sudo apt-get install -y redis-tools
 RUN sudo apt-get install -y python-pip
-RUN sudo pip install Flask
-RUN sudo mkdir -p /repo
+RUN sudo pip install flask redis
+RUN sudo mkdir -p /code
 
-ADD . /repo
-WORKDIR /repo
+ADD . /code
+WORKDIR /code
 
 CMD python server.py
 
