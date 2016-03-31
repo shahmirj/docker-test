@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/code
     depends_on:
-    - redis
+     - redis
   redis:
     container_name: "docker-test-redis"
     image: redis
